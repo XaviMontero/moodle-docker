@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   nginx-proxy:
     image: jwilder/nginx-proxy
@@ -41,6 +42,7 @@ services:
       - application:/var/www
       - logs:/var/log/supervisor
       - files:/var/files
+    environment: 
       - VIRTUAL_HOST=evea.montecino.tech
       - LETSENCRYPT_HOST=evea.montecino.tech
       - LETSENCRYPT_EMAIL=xavi@kpyvara.com
@@ -56,6 +58,8 @@ volumes:
   certs:
   html:
   vhostd:
-  wordpress:
+  application:
   mariadb:
+  logs:
+  files:
 
