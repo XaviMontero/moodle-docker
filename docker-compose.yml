@@ -61,7 +61,7 @@ services:
       - mariadb
     networks:
       - dockerwp
-  networks:
+networks:
   dockerwp:
 volumes:
   certs:
