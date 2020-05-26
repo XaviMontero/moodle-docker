@@ -29,23 +29,7 @@ services:
       - html:/usr/share/nginx/html
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
-      - dockerwp
-  wordpress:
-    depends_on:
-      - mariadb
-    image: wordpress
-    volumes:
-      - wordpress:/var/www/html
-      - ./google3a2b0e8834a6778b.html:/var/www/html   
-      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-      - ./php.ini:/var/www/html/wp-admin/php.ini
-    expose:
-      - 80
-    environment:
-    networks:
-      - dockerwp
-    restart: always
-      
+      - dockerwp     
   mariadb:
     image: 'bitnami/mariadb:10.1'
     environment:
