@@ -49,13 +49,14 @@ services:
       - VIRTUAL_HOST=montecino.tech
       - LETSENCRYPT_HOST=montecino.tech
       - LETSENCRYPT_EMAIL=oxmonteroc83@est.ucacue.edu.ec
-    export:
+    expose:
       - 80
+      - 443
     volumes:
       - 'moodle_data:/bitnami'
     depends_on:
       - mariadb
-   networks:
+    networks:
       - dockerwp
     restart: always
 networks:
